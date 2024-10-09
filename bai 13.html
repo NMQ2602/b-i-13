@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layout Example</title>
+<style>
+    * {
+    box-sizing: border-box; /* Đảm bảo padding và border không làm tăng kích thước tổng của phần tử */
+    margin: 0; /* Loại bỏ margin mặc định của trình duyệt */
+    padding: 0; /* Loại bỏ padding mặc định của trình duyệt */
+}
+
+body {
+    font-family: Arial, sans-serif; 
+    background-color: #f5a623; 
+    display: grid; 
+    grid-template-areas:
+        "header header header"
+        "nav section aside" 
+        "footer footer footer";
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-rows: auto 1fr auto;
+    height: 100vh;
+    gap: 10px;
+    padding: 10px;
+}
+
+header, nav, section, aside, footer {
+    background-color: #b0b0b0;
+    padding: 20px;
+    border-radius: 15px;
+}
+
+header {
+    grid-area: header;
+    background-color: #b0b0b0;
+    border-radius: 15px;
+    border: 5px solid gray;
+    text-align: center;
+}
+
+nav {
+    grid-area: nav;
+    background-color: #c0c0c0;
+    border-radius: 15px;
+    border: 5px solid gray;
+    font-size: 24px;
+}
+
+section {
+            grid-area: section;
+            display: flex;
+            flex-direction: column;
+            background-color: #c3c3c3;
+            padding: 10px;
+            border-radius: 10px;
+            border-bottom: 10px;
+            text-align: center;
+            font-weight: bold;
+            font-size: 24px;
+            border: 5px solid gray;
+        }
+ 
+
+section > header {
+            background-color: #c3c3c3;
+            padding: 10px;
+            margin-bottom: 10px;
+            text-align: center;
+            border-radius: 10px;
+            border: 5px solid gray;
+            position: relative;
+            top: 20px;
+        }
+
+
+article {
+    flex-grow: 1;
+    background-color: #c3c3c3;
+    padding: 80px;
+    margin-bottom: 40px;
+    border-radius: 10px;
+    border-bottom: 20px;
+    border: 5px solid gray;
+    position: relative;
+    top: 20px;
+    
+ }
+
+section > footer {
+        background-color: #c3c3c3;
+        padding: 10px;
+        text-align: center;
+        border-radius: 10px;
+        border: 5px solid gray;
+        position: relative;
+        bottom: 10px;
+
+
+}
+
+aside {
+    grid-area: aside;
+    background-color: #c0c0c0;
+    border-radius: 15px;
+    border: 5px solid gray;
+    font-size: 24px;
+}
+
+footer {
+    grid-area: footer;
+    background-color: #b0b0b0;
+    border-radius: 15px;
+    border: 5px solid gray;
+    font-size: 24px;
+    text-align: center;
+}
+</style>
+</head>
+<body>
+    <header>
+        <h1>&lt;Header&gt;</h1>
+    </header>
+
+    <nav>
+        <p>&lt;Nav&gt;</p>
+    </nav>
+
+    <section>
+            &lt;Section&gt;
+        <header>
+            <h2>&lt;Header&gt;</h2>
+        </header>
+
+        <article>
+            <p>&lt;Article&gt;</p>
+        </article>
+
+        <footer>
+            <p>&lt;Footer&gt;</p>
+        </footer>
+    </section>
+
+    <aside>
+        <p>&lt;Aside&gt;</p>
+    </aside>
+
+    <footer>
+        <p>&lt;Footer&gt;</p>
+    </footer>
+</body>
+</html>
